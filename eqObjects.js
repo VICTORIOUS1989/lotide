@@ -25,8 +25,9 @@ function assertEqual (actual, expected) {
       for (const key of obj1) {
         if (Array.isArray(object1[key]) || Array.isArray(object2[key])) bool = eqArrays(object1[key],object2[key]);
      
-        else if  (object1[key] === object2[key]) bool = true;
-              else bool = false;
+        else {
+             if  (object1[key] === object2[key]) bool = true;
+              else bool = false;} 
       }
 
     }
@@ -39,9 +40,12 @@ function assertEqual (actual, expected) {
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
+const ba = { b: "2", a: 3};
 console.log(assertEqual(eqObjects(cd, dc),true)); // => true
 console.log(assertEqual(eqObjects(ab, ba),true)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
+
+
+
