@@ -1,7 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) return `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
-  else return `🛑🛑🛑 Assertion failed: ${actual} !== ${expected}`;
-  };
+
 function eqArrays (array1, array2)  {
   let bool;
   for (let i = 0 ; i < array1.length ; i++  ) {
@@ -14,3 +11,4 @@ function eqArrays (array1, array2)  {
   return bool;
 }
 
+module.exports = eqArrays;

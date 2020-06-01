@@ -4,3 +4,4 @@
     else return undefined ;
   }
 
+  module.exports = head;
